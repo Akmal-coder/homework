@@ -32,7 +32,7 @@ def mask_account_card(info: str) -> str:
     # Обработка случаев со счетом ("Счет ...")
     elif parts[0] == "Счет":
         account_number = parts[-1]
-        masked_account = masks.mask_account_number(account_number)
+        masked_account = masks.get_mask_account(account_number)
         return f"Счет {masked_account}"
 
     else:
@@ -42,7 +42,7 @@ def mask_account_card(info: str) -> str:
 
 def get_date(date_str: str) -> str:
     """
-    Преобразует строку с датой из формата ISO 8601 в формат DD.MM.YYYY.
+    Преобразуем строку с датой из формата ISO 8601 в формат DD.MM.YYYY.
 
     Аргументы:
         date_str (str): строка вида "2024-03-11T02:26:18.671407"
