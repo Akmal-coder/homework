@@ -24,3 +24,4 @@ if __name__ == "__main__":
 
     print("Маска номера карты:", get_mask_card_number(card_num))
     print("Маска номера счета:", get_mask_account(account_num))
+#изменен
