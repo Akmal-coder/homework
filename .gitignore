@@ -201,3 +201,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+Application Data/
+Cookies/
+Local Settings/
+NetHood/
+PrintHood/
+Recent/
+SendTo/
+главное меню/
+Мои документы/
+Шаблоны/
+AppData/
+NTUSER.DAT*
+*.log
+*.ini
