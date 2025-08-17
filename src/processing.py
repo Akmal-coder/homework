@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 def filter_by_state(list_dict: list, state="EXECUTED") -> list:
-    """Фильтруем список словарей по значению ключа 'state'."""
+    """Фильтрует список словарей по значению ключа 'state'."""
     filter_list = []
     for dict_item in list_dict:
         if dict_item.get("state") == state:
@@ -10,9 +10,21 @@ def filter_by_state(list_dict: list, state="EXECUTED") -> list:
     return filter_list
 
 
-def sort_by_date_descending(list_dict: list) -> list:
-    """Сортируем список словарей по дате в порядке убывания (от новой к старой)."""
-    return sorted(list_dict, key=lambda x: datetime.fromisoformat(x["date"]), reverse=True)
+def sort_by_date_descending(list_dict: list, reverse=True) -> list:
+    """Сортирует список словарей по дате.
+
+    Args:
+        list_dict (list): список словарей с ключом 'date'.
+        reverse (bool): если True, сортирует по убыванию; если False — по возрастанию.
+
+    Returns:
+        list: отсортированный список.
+    """
+    return sorted(
+        list_dict,
+        key=lambda x: datetime.fromisoformat(x["date"]),
+        reverse=reverse
+    )
 
 
 if __name__ == "__main__":
@@ -30,7 +42,13 @@ if __name__ == "__main__":
         print(item)
 
     # Сортируем по дате (по убыванию)
-    sorted_filtered_desc = sort_by_date_descending(filtered)
-    print("\nОтфильтрованные и отсортированные по дате (по убыванию):")
-    for item in sorted_filtered_desc:
+    sorted_desc = sort_by_date_descending(filtered)
+    print("\nОтсортированные по дате (по убыванию):")
+    for item in sorted_desc:
+        print(item)
+
+    # Сортируем по дате (по возрастанию)
+    sorted_asc = sort_by_date_descending(filtered, reverse=False)
+    print("\nОтсортированные по дате (по возрастанию):")
+    for item in sorted_asc:
         print(item)
