@@ -1,26 +1,24 @@
 def get_mask_card_number(card_number: int) -> str:
-    """Функция принимает на вход номер карты в виде числа и возвращает маску номера по правилу
-    XXXX XX** **** XXXX."""
-    card_str: str = str(card_number)
-    if len(card_str) == 16:
-        mask_number = f"{card_str[:4]} {card_str[4:6]} ** **** {card_str[12:]}"
-        return mask_number
-    return "Некорректный ввод"
+    """
+    Возвращает маску номера карты в формате XXXX XX** **** XXXX
+    """
+    card_number_str = str(card_number)
+    if len(card_number_str) != 16:
+        raise ValueError("Неверная длина номера")
+
+    card_mask = card_number_str[:6] + "******" + card_number_str[-4:]
+    card_mask = " ".join(card_mask[i : i + 4] for i in range(0, len(card_mask), 4))
+    return card_mask
 
 
 def get_mask_account(account_number: int) -> str:
-    """Функция принимает на вход номер счета в виде числа и возвращает маску номера по правилу **XXXX."""
-    account_str: str = str(account_number)
-    if len(account_str) >= 4:
-        mask_account = f"**{account_str[-4:]}"
-        return mask_account
-    return "Некорректный ввод"
+    """
+    Возвращает маску номера аккаунта в формате **XXXX
+    """
+    account_number_str = str(account_number)
 
+    if len(account_number_str) != 20:
+        raise ValueError("Неверная длина номера")
 
-if __name__ == "__main__":
-    # Пример вызова функций и вывод результатов
-    card_num = 1234567890123456
-    account_num = 1234567890123456
-
-    print("Маска номера карты:", get_mask_card_number(card_num))
-    print("Маска номера счета:", get_mask_account(account_num))
+    mask_account = "**" + account_number_str[-4:]
+    return mask_account

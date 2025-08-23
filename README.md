@@ -26,6 +26,11 @@ pip install -r requirements.txt'''
 
 6. sort_by_date - Сортирует список словарей по значению ключа 'date'.
 
+
+## Проведены тесты методами:
+1. @pytest.mark.parametrize
+2. @pytest.fixture
+
 ## Примеры использования:
 
 1. get_mask_card_number
