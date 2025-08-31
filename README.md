@@ -26,6 +26,12 @@ pip install -r requirements.txt'''
 
 6. sort_by_date - Сортирует список словарей по значению ключа 'date'.
 
+7. filter_by_currency - Возвращает итератор транзакций с указанной валютой.
+
+8. transaction_descriptions - Генератор, возвращающий описание каждой транзакции.
+
+9. card_number_generator - Генератор номеров карт в диапазоне.
+
 
 ## Проведены тесты методами:
 1. @pytest.mark.parametrize
