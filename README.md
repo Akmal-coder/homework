@@ -33,6 +33,19 @@ pip install -r requirements.txt'''
 9. card_number_generator - Генератор номеров карт в диапазоне.
 
 
+## Добавлен декоратор `log`, который предназначен для автоматического логирования вызовов функций.
+## Пример использования:
+from decorators import log
+
+@log(filename="log.txt")
+def my_function(x, y):
+    return x + y
+
+if __name__ == "__main__":
+    my_function(1, 2)
+
+
+
 ## Проведены тесты методами:
 1. @pytest.mark.parametrize
 2. @pytest.fixture
