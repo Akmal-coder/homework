@@ -1,9 +1,7 @@
 import unittest
 from unittest.mock import patch, mock_open
-import os
 import json
 from src.utils import read_transactions
-import pytest
 
 
 class TestReadTransactions(unittest.TestCase):
