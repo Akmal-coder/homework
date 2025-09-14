@@ -10,9 +10,7 @@ logger = logging.getLogger("utils")
 logger.setLevel(logging.DEBUG)
 
 file_handler = logging.FileHandler(f"../logs/utils.log", mode="w", encoding="utf-8")
-formatter = logging.Formatter(
-    "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 file_handler.setFormatter(formatter)
 
 if not logger.hasHandlers():
@@ -46,34 +44,6 @@ def read_transactions(file_path: str) -> list[dict]:
     except Exception as e:
         logger.error(f"Неизвестная ошибка при чтении файла {file_path}: {e}")
         return []
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # import json
