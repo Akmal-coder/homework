@@ -1,4 +1,4 @@
-import random
+# import random
 
 from typing import List, Dict, Iterator
 
@@ -28,5 +28,5 @@ def card_number_generator(start: int, stop: int) -> Iterator[str]:
         # Форматируем число в 16-значное с ведущими нулями
         card_num = f"{number:016d}"
         # Разбиваем на группы по 4 цифры
-        formatted = " ".join([card_num[i : i + 4] for i in range(0, 16, 4)])
+        formatted = " ".join([card_num[i: i + 4] for i in range(0, 16, 4)])
         yield formatted

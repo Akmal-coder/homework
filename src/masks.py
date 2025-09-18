@@ -28,7 +28,7 @@ def get_mask_card_number(card_number: int) -> str:
             raise ValueError("Неверная длина номера")
 
         card_mask = card_number_str[:6] + "******" + card_number_str[-4:]
-        card_mask = " ".join(card_mask[i : i + 4] for i in range(0, len(card_mask), 4))
+        card_mask = " ".join(card_mask[i: i + 4] for i in range(0, len(card_mask), 4))
 
         logger.debug(f"Маска номера карты сформирована успешно: {card_mask}")
         return card_mask
